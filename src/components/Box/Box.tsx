@@ -4,6 +4,8 @@ import { TouchableOpacity, TouchableOpacityProps as RNTouchableOpacityProps } fr
 
 export const Box = createBox<Theme>();
 
+export type BoxProps = React.ComponentProps<typeof Box>
+
 export type TouchableOpacityBoxProps = SpacingProps<Theme>
     & LayoutProps<Theme>
     & BackgroundColorProps<Theme>

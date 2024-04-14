@@ -28,9 +28,8 @@ export function Button({ title, loading, ...TouchableOpacityBoxProps }: ButtonPr
 
                     <Text
                         preset='headingMedium'
-                        style={{
-                            color: '#fff',
-                        }}
+                        bold
+                        color='primaryContrast'
                     >
                         {title}
                     </Text>
