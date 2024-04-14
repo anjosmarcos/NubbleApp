@@ -4,6 +4,7 @@ import { Text } from './src/components/Text/Text';
 import { Button } from './src/components/Button/Button';
 import { ThemeProvider } from '@shopify/restyle';
 import { theme } from './src/theme/theme';
+import { Box } from './src/components/Box/Box';
 
 
 function App(): JSX.Element {
@@ -15,10 +16,19 @@ function App(): JSX.Element {
             italic >
             Coffstack
           </Text>
-
+          <Box marginBottom='s24'>
+            <Button
+              loading
+              title='Entrar'
+            />
+          </Box>
           <Button
+            loading={false}
             title='Entrar'
           />
+
+
+
 
         </View>
       </SafeAreaView>
