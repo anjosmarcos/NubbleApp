@@ -3,14 +3,14 @@ import { AccessibilityInfo, ActivityIndicator, TouchableOpacity } from 'react-na
 import { Text } from '../Text/Text'
 import { useTheme } from '@shopify/restyle'
 import { Theme } from '../../theme/theme'
-import { TouchableOpacityBox } from '../Box/Box'
+import { TouchableOpacityBox, TouchableOpacityBoxProps } from '../Box/Box'
 
-interface ButtonProps {
+interface ButtonProps extends TouchableOpacityBoxProps {
     title: string;
-    loading: boolean;
+    loading?: boolean;
 }
 
-export function Button({ title, loading }: ButtonProps) {
+export function Button({ title, loading, ...TouchableOpacityBoxProps }: ButtonProps) {
     const { colors } = useTheme<Theme>()
 
     return (
@@ -21,6 +21,7 @@ export function Button({ title, loading }: ButtonProps) {
             alignItems='center'
             justifyContent='center'
             borderRadius='s16'
+            {...TouchableOpacityBoxProps}
         >
             {
                 loading ? <ActivityIndicator /> :

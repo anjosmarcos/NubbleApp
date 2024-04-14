@@ -23,6 +23,8 @@ function App(): JSX.Element {
             />
           </Box>
           <Button
+            marginTop='s4'
+            backgroundColor='greenPrimary'
             loading={false}
             title='Entrar'
           />
