@@ -1,17 +1,38 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 import { Text } from './src/components/Text/Text';
+import { Button } from './src/components/Button/Button';
+import { ThemeProvider } from '@shopify/restyle';
+import { theme } from './src/theme/theme';
+import { Box } from './src/components/Box/Box';
 
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView>
-      <Text preset='headingMedium' italic >Fonte Normal</Text>
-      <Text preset='headingMedium' italic bold style={{ color: 'red' }}>Fonte Satoshi-Light</Text>
-      <Text preset='headingMedium' semiBold style={{ color: 'red' }}>Fonte Satoshi-Light</Text>
+    <ThemeProvider theme={theme}>
+      <SafeAreaView>
+        <View style={{ paddingHorizontal: 24 }}>
+          <Text preset='headingLarge'
+            italic >
+            Coffstack
+          </Text>
+          <Box marginBottom='s24'>
+            <Button
+              loading
+              title='Entrar'
+            />
+          </Box>
+          <Button
+            loading={false}
+            title='Entrar'
+          />
 
 
-    </SafeAreaView>
+
+
+        </View>
+      </SafeAreaView>
+    </ThemeProvider>
   )
 }
 
