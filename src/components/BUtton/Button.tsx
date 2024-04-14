@@ -15,11 +15,12 @@ export function Button({ title, loading }: ButtonProps) {
 
     return (
         <Box
-            backgroundColor='redError'
+            backgroundColor='greenPrimary'
             paddingHorizontal='s20'
             height={50}
             alignItems='center'
             justifyContent='center'
+            borderRadius='s16'
         >
             {
                 loading ? <ActivityIndicator /> :
