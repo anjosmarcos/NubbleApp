@@ -3,7 +3,7 @@ import { AccessibilityInfo, ActivityIndicator, TouchableOpacity } from 'react-na
 import { Text } from '../Text/Text'
 import { useTheme } from '@shopify/restyle'
 import { Theme } from '../../theme/theme'
-import { Box } from '../Box/Box'
+import { Box, TouchOpacityBox } from '../Box/Box'
 
 interface ButtonProps {
     title: string;
@@ -14,7 +14,7 @@ export function Button({ title, loading }: ButtonProps) {
     const { colors } = useTheme<Theme>()
 
     return (
-        <Box
+        <TouchOpacityBox
             backgroundColor='greenPrimary'
             paddingHorizontal='s20'
             height={50}
@@ -34,6 +34,6 @@ export function Button({ title, loading }: ButtonProps) {
                         {title}
                     </Text>
             }
-        </Box>
+        </TouchOpacityBox>
     )
 }
