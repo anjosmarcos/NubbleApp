@@ -16,17 +16,46 @@ function App(): JSX.Element {
             italic >
             Coffstack
           </Text>
-          <Box marginBottom='s24'>
+          <Box marginBottom='s12'>
             <Button
               loading
               title='Entrar'
             />
           </Box>
           <Button
-            marginTop='s4'
-            backgroundColor='greenPrimary'
+            marginBottom='s12'
             loading={false}
-            title='Entrar'
+            title='Primary'
+          />
+          <Button
+            marginBottom='s12'
+            disabled
+            loading={false}
+            title='Primary'
+          />
+          <Button
+            marginBottom='s12'
+            preset='outline'
+            title='Outline'
+          />
+          <Button
+            marginBottom='s12'
+            disabled
+            preset='outline'
+            title='Outline'
+          />
+          <Button
+            marginBottom='s12'
+            preset='outline'
+            title='Outline'
+            loading
+          />
+          <Button
+            marginBottom='s12'
+            disabled
+            preset='outline'
+            title='Outline'
+            loading
           />
 
 
