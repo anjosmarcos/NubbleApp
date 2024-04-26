@@ -23,7 +23,7 @@ function App(): JSX.Element {
           </Box>
 
           <Box>
-            <TextInput label='Senha' placeholder='Digite sua senha' />
+            <TextInput errorMesssage='Messagem de erro' label='Senha' placeholder='Digite sua senha' />
           </Box>
           <Text mt='s10' color='primary' preset='paragraphSmall' >
             Esqueci minha senha
