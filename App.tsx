@@ -1,10 +1,11 @@
 import React from 'react';
-import { SafeAreaView, TextInput, View } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 import { Text } from './src/components/Text/Text';
 import { ThemeProvider } from '@shopify/restyle';
 import { theme } from './src/theme/theme';
 import { Box } from './src/components/Box/Box';
 import { Button } from './src/components/BUtton/Button';
+import { TextInput } from './src/components/TextInput/TextInput';
 
 
 function App(): JSX.Element {
@@ -18,11 +19,11 @@ function App(): JSX.Element {
           </Text>
 
           <Box mb='s20'>
-            <TextInput placeholder='Digite seu e-mail' style={{ borderWidth: 1, height: 50 }} />
+            <TextInput label='E-mail' placeholder='Digite seu e-mail' />
           </Box>
 
           <Box>
-            <TextInput placeholder='Digite sua senha' style={{ borderWidth: 1, height: 50 }} />
+            <TextInput label='Senha' placeholder='Digite sua senha' />
           </Box>
           <Text mt='s10' color='primary' preset='paragraphSmall' >
             Esqueci minha senha
