@@ -11,16 +11,18 @@ import { useAppTheme } from "../../hooks/useAppTheme";
 
 interface TextInputProps extends RNTextInputProps {
     label?: string;
-    errorMesssage?: string;
+    errorMessage?: string;
+    RightComponent?: React.ReactElement
 }
 
-export function TextInput({ label, errorMesssage, ...rnTextInputProps }: TextInputProps) {
+export function TextInput({ label, errorMessage, RightComponent, ...rnTextInputProps }: TextInputProps) {
     const { colors } = useAppTheme()
     const inputRef = useRef<RNTextInput>(null)
 
     const $textInputContainer: BoxProps = {
-        borderWidth: errorMesssage ? 2 : 1,
-        borderColor: errorMesssage ? "error" : "gray4",
+        flexDirection: "row",
+        borderWidth: errorMessage ? 2 : 1,
+        borderColor: errorMessage ? "error" : "gray4",
         padding: "s16",
         borderRadius: "s12"
     }
@@ -39,9 +41,11 @@ export function TextInput({ label, errorMesssage, ...rnTextInputProps }: TextInp
                 <Box {...$textInputContainer}>
                     <RNTextInput
                         ref={inputRef}
-                        placeholderTextColor={colors.gray2} style={$textInputStyle} {...rnTextInputProps} />
+                        placeholderTextColor={colors.gray2} style={$textInputStyle} {...rnTextInputProps}
+                    />
+                    {RightComponent && (<Box justifyContent="center" ml="s16">{RightComponent}</Box>)}
                 </Box>
-                {errorMesssage && (<Text preset="paragraphSmall" color="error" bold>{errorMesssage}</Text>)}
+                {errorMessage && (<Text preset="paragraphSmall" color="error" bold>{errorMessage}</Text>)}
             </Box>
         </Pressable>
     )
@@ -49,6 +53,8 @@ export function TextInput({ label, errorMesssage, ...rnTextInputProps }: TextInp
 
 const $textInputStyle: TextStyle = {
     padding: 0,
+    flexGrow: 1,
+    flexShrink: 1,
     fontFamily: $fontFamily.regular,
     ...$fontSize.paragraphMedium
 }

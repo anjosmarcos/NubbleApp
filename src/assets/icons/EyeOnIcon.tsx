@@ -3,7 +3,7 @@ import { Svg, Path } from 'react-native-svg'
 import { IconBase } from "../../components/Icon/Icon";
 
 
-export function EyeOnIcon({ color = 'black', size }: IconBase) {
+export function EyeOnIcon({ color = 'black', size = 20 }: IconBase) {
     return (
         <Svg
             width={size}
