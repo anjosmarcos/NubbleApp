@@ -8,7 +8,7 @@ import { BookmarkFillIcon } from "../../assets/icons/BookmarkFillIcon";
 import { ProfileFillIcon } from "../../assets/icons/ProfileFillIcon";
 import { HeartFillIcon } from "../../assets/icons/HeartFillIcon";
 import { BellOnIcon } from "../../assets/icons/BellOnIcon";
-import { BellOff, BellOffIcon } from "../../assets/icons/BellOff";
+import { BellOffIcon } from "../../assets/icons/BellOff";
 import { ChatOnIcon } from "../../assets/icons/ChatOnIcon";
 import { ChatOffIcon } from "../../assets/icons/ChatIcon";
 import { CommentIcon } from "../../assets/icons/Comment";
