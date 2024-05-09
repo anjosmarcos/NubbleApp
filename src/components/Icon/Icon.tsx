@@ -1,35 +1,36 @@
 import React from "react";
-import { EyeOnIcon } from "../../assets/icons/EyeOnIcon";
-import { EyeOffIcon } from "../../assets/icons/EyeOffIcon";
-import { useAppTheme } from "../../hooks/useAppTheme";
-import { ThemeColors } from "../../theme/theme";
-import { HomeFillIcon } from "../../assets/icons/HomeFillIcon";
-import { BookmarkFillIcon } from "../../assets/icons/BookmarkFillIcon";
-import { ProfileFillIcon } from "../../assets/icons/ProfileFillIcon";
-import { HeartFillIcon } from "../../assets/icons/HeartFillIcon";
-import { BellOnIcon } from "../../assets/icons/BellOnIcon";
-import { BellOff, BellOffIcon } from "../../assets/icons/BellOff";
-import { ChatOnIcon } from "../../assets/icons/ChatOnIcon";
-import { ChatOffIcon } from "../../assets/icons/ChatIcon";
-import { CommentIcon } from "../../assets/icons/Comment";
+import { Pressable } from "react-native";
 import { ArrowLeftIcon } from "../../assets/icons/ArrowLeftIcon";
 import { ArrowLightIcon } from "../../assets/icons/ArrowLightIcon";
-import { SettingsIcon } from "../../assets/icons/SettingsIcon";
-import { MoreIcon } from "../../assets/icons/MoreIcon";
-import { HomeIcon } from "../../assets/icons/HomeIcon";
+import { BellOffIcon } from "../../assets/icons/BellOff";
+import { BellOnIcon } from "../../assets/icons/BellOnIcon";
+import { BookmarkFillIcon } from "../../assets/icons/BookmarkFillIcon";
 import { BookmarkIcon } from "../../assets/icons/BookmarkIcon";
-import { ProfileIcon } from "../../assets/icons/ProfileIcon";
-import { HeartIcon } from "../../assets/icons/HeartIcon";
-import { NewPostIcon } from "../../assets/icons/newPostIcon";
 import { CameraIcon } from "../../assets/icons/CameraIcon";
-import { SearchIcon } from "../../assets/icons/SearchIcon";
-import { MessageIcon } from "../../assets/icons/MessageIcon";
+import { ChatOffIcon } from "../../assets/icons/ChatIcon";
+import { ChatOnIcon } from "../../assets/icons/ChatOnIcon";
 import { CheckIcon } from "../../assets/icons/CheckIcon";
 import { ChevronRightIcon } from "../../assets/icons/ChevronRightIcon";
-import { FlashOffIcon } from "../../../FlashOffIcon";
+import { CommentIcon } from "../../assets/icons/Comment";
+import { EyeOffIcon } from "../../assets/icons/EyeOffIcon";
+import { EyeOnIcon } from "../../assets/icons/EyeOnIcon";
+import { FlashOffIcon } from "../../assets/icons/FlashOffIcon";
 import { FlashOnIcon } from "../../assets/icons/FlashOnIcon";
-import { TrashIcon } from "../../assets/icons/TrashIcon";
+import { HeartFillIcon } from "../../assets/icons/HeartFillIcon";
+import { HeartIcon } from "../../assets/icons/HeartIcon";
+import { HomeFillIcon } from "../../assets/icons/HomeFillIcon";
+import { HomeIcon } from "../../assets/icons/HomeIcon";
+import { MessageIcon } from "../../assets/icons/MessageIcon";
+import { MoreIcon } from "../../assets/icons/MoreIcon";
+import { NewPostIcon } from "../../assets/icons/newPostIcon";
+import { ProfileFillIcon } from "../../assets/icons/ProfileFillIcon";
+import { ProfileIcon } from "../../assets/icons/ProfileIcon";
+import { SearchIcon } from "../../assets/icons/SearchIcon";
 import { SendIcon } from "../../assets/icons/SendIcon";
+import { SettingsIcon } from "../../assets/icons/SettingsIcon";
+import { TrashIcon } from "../../assets/icons/TrashIcon";
+import { useAppTheme } from "../../hooks/useAppTheme";
+import { ThemeColors } from "../../theme/theme";
 
 export interface IconBase {
     size?: number;
@@ -40,11 +41,20 @@ interface Props {
     name: IconName;
     color?: ThemeColors;
     size?: number;
+    onPress?: () => void;
 }
 
-export function Icon({ name, color = 'backgroundContrast', size }: Props) {
+export function Icon({ name, color = 'backgroundContrast', size, onPress }: Props) {
     const SVGIcon = iconRegistry[name]
     const { colors } = useAppTheme()
+
+    if (onPress) {
+        return (
+            <Pressable hitSlop={10} onPress={onPress}>
+                <SVGIcon color={colors[color]} size={size} />
+            </Pressable>
+        )
+    }
 
     return <SVGIcon color={colors[color]} size={size} />;
 }
