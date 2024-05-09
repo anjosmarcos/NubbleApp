@@ -1,4 +1,5 @@
 import React from "react";
+import { Pressable } from "react-native";
 import { ArrowLeftIcon } from "../../assets/icons/ArrowLeftIcon";
 import { ArrowLightIcon } from "../../assets/icons/ArrowLightIcon";
 import { BellOffIcon } from "../../assets/icons/BellOff";
@@ -40,11 +41,20 @@ interface Props {
     name: IconName;
     color?: ThemeColors;
     size?: number;
+    onPress?: () => void;
 }
 
-export function Icon({ name, color = 'backgroundContrast', size }: Props) {
+export function Icon({ name, color = 'backgroundContrast', size, onPress }: Props) {
     const SVGIcon = iconRegistry[name]
     const { colors } = useAppTheme()
+
+    if (onPress) {
+        return (
+            <Pressable hitSlop={10} onPress={onPress}>
+                <SVGIcon color={colors[color]} size={size} />
+            </Pressable>
+        )
+    }
 
     return <SVGIcon color={colors[color]} size={size} />;
 }
