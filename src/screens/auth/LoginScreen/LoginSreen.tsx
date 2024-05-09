@@ -1,8 +1,8 @@
 import { Button } from "../../../components/BUtton/Button";
-import { Icon } from "../../../components/Icon/Icon";
 import { Screen } from "../../../components/Screen/Screen";
 import { Text } from "../../../components/Text/Text";
 import { TextInput } from "../../../components/TextInput/TextInput";
+import { PasswordInput } from "../SingUpScreen/PasswordInput";
 
 export function LoginScreen() {
     return (
@@ -18,10 +18,10 @@ export function LoginScreen() {
                 boxProps={{ mb: 's20' }}
             />
 
-            <TextInput
+            <PasswordInput
                 label='Senha'
                 placeholder='Digite sua senha'
-                RightComponent={<Icon name='eyeOn' color='gray2' />}
+                // RightComponent={<Icon name='eyeOn' color='gray2' />}
                 boxProps={{ mb: 's10' }}
             />
 
