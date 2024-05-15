@@ -2,6 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from "react";
 import { IconProps } from '../components/Icon/Icon';
+import { ForgotPasswordScreen } from '../screens/auth/ForgotPasswordScreen/ForgotPasswordScreen';
 import { LoginScreen } from '../screens/auth/LoginScreen/LoginSreen';
 import { SingUpScreen } from '../screens/auth/SingUpScreen/SingUpScreen';
 import { SuccessScreen } from '../screens/auth/SuccessScreen/SuccessScreen';
@@ -14,6 +15,7 @@ export type RootStackParamList = {
         message: string;
         icon: Pick<IconProps, 'name' | 'color'>;
     };
+    ForgotPasswordScreen: undefined;
     // TODO: Add the other screens here
 
 }
@@ -30,6 +32,7 @@ export function Router() {
                 <Stack.Screen name="LoginSreen" component={LoginScreen} />
                 <Stack.Screen name="SingUpScreen" component={SingUpScreen} />
                 <Stack.Screen name="SuccessScreen" component={SuccessScreen} />
+                <Stack.Screen name="ForgotPasswordScreen" component={ForgotPasswordScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     )
