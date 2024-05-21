@@ -1,12 +1,12 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Button } from "../../../components/BUtton/Button";
+import { FormPasswordInput } from "../../../components/FormPasswordInput/FormPassWordInput";
 import { FormTextInput } from "../../../components/FormTextInput/FormTextInput";
 import { Screen } from "../../../components/Screen/Screen";
 import { Text } from "../../../components/Text/Text";
 import { useResetNavigationSucess } from "../../../hooks/useResetNavigationSucess";
 import { RootStackParamList } from "../../../routes/routes";
-import { PasswordInput } from "./PasswordInput";
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SingUpScreen'>
 type SingUpFormType = {
@@ -75,21 +75,17 @@ export function SingUpScreen({ navigation }: ScreenProps) {
                 boxProps={{ mb: "s20" }}
             />
 
-            <Controller
+            <FormPasswordInput
                 control={control}
                 name="password"
-                rules={({ required: 'Campo obrigatório' })}
-                render={({ field, fieldState }) => (
-                    <PasswordInput
-                        value={field.value}
-                        onChangeText={field.onChange}
-                        errorMessage={fieldState.error?.message}
-                        label='Senha'
-                        secureTextEntry
-                        placeholder='Digite sua senha'
-                        boxProps={{ mb: 's48' }}
-                    />
-                )}
+                rules={{
+                    required: 'Campo obrigatório',
+                    minLength: { value: 8, message: 'Senha deve ter no mínimo 8 caracteres' }
+                }}
+                label="Senha"
+                placeholder="Digite sua senha"
+                boxProps={{ mb: "s48" }}
+
             />
 
             <Button
