@@ -69,7 +69,6 @@ export function LoginScreen({ navigation }: ScreenProps) {
                 render={({ field, fieldState }) =>
                 (
                     <TextInput
-                        autoCapitalize="none"
                         errorMessage={fieldState.error?.message}
                         value={field.value}
                         onChangeText={field.onChange}
