@@ -31,11 +31,11 @@ export function SingUpScreen({ navigation }: ScreenProps) {
 
         console.log(formValues)
 
-        // reset({
-        //     title: 'Sua conta foi criada com sucesso!',
-        //     message: 'Agora é só fazer login na nossa plataforma',
-        //     icon: { name: 'CheckRound', color: 'success' }
-        // })
+        reset({
+            title: 'Sua conta foi criada com sucesso!',
+            message: 'Agora é só fazer login na nossa plataforma',
+            icon: { name: 'CheckRound', color: 'success' }
+        })
 
     }
     return (
