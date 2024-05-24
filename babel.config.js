@@ -11,8 +11,8 @@ module.exports = {
           '@routes': './src/routes',
           '@screens': './src/screens',
           '@theme': './src/theme',
-        }
-      }
-    ]
+        },
+      },
+    ],
   ],
 };

@@ -1,6 +1,9 @@
 import React from "react";
 import { Pressable } from "react-native";
 
+import { useAppTheme } from '@hooks';
+import { ThemeColors } from '@theme';
+
 import { ArrowLeftIcon } from "../../assets/icons/ArrowLeftIcon";
 import { ArrowLightIcon } from "../../assets/icons/ArrowLightIcon";
 import { BellOffIcon } from "../../assets/icons/BellOff";
@@ -35,76 +38,75 @@ import { SendIcon } from "../../assets/icons/SendIcon";
 import { SettingsIcon } from "../../assets/icons/SettingsIcon";
 import { TrashIcon } from "../../assets/icons/TrashIcon";
 
-import { useAppTheme } from "@hooks";
-import { ThemeColors } from "@theme";
-
 export interface IconBase {
-    size?: number;
-    color?: string;
+  size?: number;
+  color?: string;
 }
 
 export interface IconProps {
-    name: IconName;
-    color?: ThemeColors;
-    size?: number;
-    onPress?: () => void;
+  name: IconName;
+  color?: ThemeColors;
+  size?: number;
+  onPress?: () => void;
 }
 
-export function Icon({ name, color = 'backgroundContrast', size, onPress }: IconProps) {
-    const SVGIcon = iconRegistry[name]
-    const { colors } = useAppTheme()
+export function Icon({
+  name,
+  color = 'backgroundContrast',
+  size,
+  onPress,
+}: IconProps) {
+  const SVGIcon = iconRegistry[name];
+  const { colors } = useAppTheme();
 
-    if (onPress) {
-        return (
-            <Pressable hitSlop={10} onPress={onPress}>
-                <SVGIcon color={colors[color]} size={size} />
-            </Pressable>
-        )
-    }
+  if (onPress) {
+    return (
+      <Pressable hitSlop={10} onPress={onPress}>
+        <SVGIcon color={colors[color]} size={size} />
+      </Pressable>
+    );
+  }
 
-    return <SVGIcon color={colors[color]} size={size} />;
+  return <SVGIcon color={colors[color]} size={size} />;
 }
-
 
 // Mapeamento dos icons
 const iconRegistry = {
-    eyeOn: EyeOnIcon,
-    eyeOff: EyeOffIcon,
-    homeFill: HomeFillIcon,
-    bookmarkFill: BookmarkFillIcon,
-    profileFill: ProfileFillIcon,
-    heartFill: HeartFillIcon,
-    bellOn: BellOnIcon,
-    bellOff: BellOffIcon,
-    chatOn: ChatOnIcon,
-    chatOff: ChatOffIcon,
-    comment: CommentIcon,
-    arrowLeft: ArrowLeftIcon,
-    arrowLight: ArrowLightIcon,
-    settings: SettingsIcon,
-    more: MoreIcon,
-    home: HomeIcon,
-    bookmark: BookmarkIcon,
-    profile: ProfileIcon,
-    heart: HeartIcon,
-    newPost: NewPostIcon,
-    camera: CameraIcon,
-    search: SearchIcon,
-    message: MessageIcon,
-    check: CheckIcon,
-    CheckRound: CheckRoundIcon,
-    chevronRight: ChevronRightIcon,
-    flashOff: FlashOffIcon,
-    flashOn: FlashOnIcon,
-    Trash: TrashIcon,
-    send: SendIcon,
-    errorRound: errorRoundIcon,
-    messageRoundLight: messageRoundLight,
-    messageRound: messageRound,
-
-
-}
+  eyeOn: EyeOnIcon,
+  eyeOff: EyeOffIcon,
+  homeFill: HomeFillIcon,
+  bookmarkFill: BookmarkFillIcon,
+  profileFill: ProfileFillIcon,
+  heartFill: HeartFillIcon,
+  bellOn: BellOnIcon,
+  bellOff: BellOffIcon,
+  chatOn: ChatOnIcon,
+  chatOff: ChatOffIcon,
+  comment: CommentIcon,
+  arrowLeft: ArrowLeftIcon,
+  arrowLight: ArrowLightIcon,
+  settings: SettingsIcon,
+  more: MoreIcon,
+  home: HomeIcon,
+  bookmark: BookmarkIcon,
+  profile: ProfileIcon,
+  heart: HeartIcon,
+  newPost: NewPostIcon,
+  camera: CameraIcon,
+  search: SearchIcon,
+  message: MessageIcon,
+  check: CheckIcon,
+  CheckRound: CheckRoundIcon,
+  chevronRight: ChevronRightIcon,
+  flashOff: FlashOffIcon,
+  flashOn: FlashOnIcon,
+  Trash: TrashIcon,
+  send: SendIcon,
+  errorRound: errorRoundIcon,
+  messageRoundLight: messageRoundLight,
+  messageRound: messageRound,
+};
 
 // Extraindo as chaves
-type IconType = typeof iconRegistry
-type IconName = keyof IconType
+type IconType = typeof iconRegistry;
+type IconName = keyof IconType;
