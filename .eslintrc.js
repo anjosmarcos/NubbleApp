@@ -1,7 +1,7 @@
-// module.exports = {
-//   root: true,
-//   extends: '@react-native-community',
-//   rules: {
-//     quotes: [1, 'single'],
-//   },
-// };
+module.exports = {
+    root: true,
+    extends: '@react-native-community',
+    rules: {
+        '@typescript-eslint/no-unused-vars': 1,
+    }
+};

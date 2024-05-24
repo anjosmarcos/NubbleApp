@@ -2,12 +2,17 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Button } from "../../../components/BUtton/Button";
-import { FormTextInput } from "../../../components/FormTextInput/FormTextInput";
-import { Screen } from "../../../components/Screen/Screen";
-import { Text } from "../../../components/Text/Text";
-import { useResetNavigationSucess } from "../../../hooks/useResetNavigationSucess";
-import { RootStackParamList } from "../../../routes/routes";
+
+import {
+    Button,
+    FormTextInput,
+    Screen,
+    Text
+} from "@components";
+
+import { useResetNavigationSucess } from "@hooks";
+import { RootStackParamList } from "@routes";
+
 import { forgotPasswordSchema } from "./forgotPasswordSchema";
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'ForgotPasswordScreen'>

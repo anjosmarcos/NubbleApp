@@ -3,11 +3,14 @@ import {
     Pressable,
     TextInput as RNTextInput,
     TextInputProps as RNTextInputProps,
-    TextStyle
+    TextStyle,
 } from "react-native";
-import { useAppTheme } from "../../hooks/useAppTheme";
-import { Box, BoxProps } from "../Box/Box";
+
 import { $fontFamily, $fontSize, Text } from "../Text/Text";
+
+import { Box, BoxProps } from "@components";
+
+import { useAppTheme } from "@hooks";
 
 export interface TextInputProps extends RNTextInputProps {
     label?: string;

@@ -2,12 +2,18 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { useForm } from "react-hook-form";
 import { Alert } from "react-native";
-import { Button } from "../../../components/BUtton/Button";
-import { FormPasswordInput } from "../../../components/FormPasswordInput/FormPassWordInput";
-import { FormTextInput } from "../../../components/FormTextInput/FormTextInput";
-import { Screen } from "../../../components/Screen/Screen";
-import { Text } from "../../../components/Text/Text";
-import { RootStackParamList } from "../../../routes/routes";
+
+import {
+    Button,
+    FormPasswordInput,
+    FormTextInput,
+    Screen,
+    Text
+} from "@components";
+
+// import { RootStackParamList } from "../../../routes/routes";
+import { RootStackParamList } from "@routes";
+
 import { loginSchema } from "./loginSchema";
 
 

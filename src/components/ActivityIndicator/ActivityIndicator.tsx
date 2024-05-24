@@ -1,7 +1,10 @@
+import { useTheme } from "@shopify/restyle";
+import {
+    Theme,
+    ThemeColors
+} from "@theme";
 import React from "react";
 import { ActivityIndicatorProps, ActivityIndicator as NRActivityIndicator } from "react-native";
-import { Theme, ThemeColors } from "../../theme/theme";
-import { useTheme } from "@shopify/restyle";
 
 interface Props extends Omit<ActivityIndicatorProps, 'color'> {
     color: ThemeColors

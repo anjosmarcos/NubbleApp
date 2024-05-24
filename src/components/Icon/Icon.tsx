@@ -1,5 +1,6 @@
 import React from "react";
 import { Pressable } from "react-native";
+
 import { ArrowLeftIcon } from "../../assets/icons/ArrowLeftIcon";
 import { ArrowLightIcon } from "../../assets/icons/ArrowLightIcon";
 import { BellOffIcon } from "../../assets/icons/BellOff";
@@ -33,8 +34,9 @@ import { SearchIcon } from "../../assets/icons/SearchIcon";
 import { SendIcon } from "../../assets/icons/SendIcon";
 import { SettingsIcon } from "../../assets/icons/SettingsIcon";
 import { TrashIcon } from "../../assets/icons/TrashIcon";
-import { useAppTheme } from "../../hooks/useAppTheme";
-import { ThemeColors } from "../../theme/theme";
+
+import { useAppTheme } from "@hooks";
+import { ThemeColors } from "@theme";
 
 export interface IconBase {
     size?: number;

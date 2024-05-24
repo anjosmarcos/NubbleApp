@@ -1,6 +1,21 @@
-import { backgroundColor, BackgroundColorProps, border, BorderProps, createBox, createRestyleComponent, layout, LayoutProps, spacing, SpacingProps, spacingShorthand, SpacingShorthandProps } from '@shopify/restyle';
-import { Theme } from '../../theme/theme';
-import { TouchableOpacity, TouchableOpacityProps as RNTouchableOpacityProps } from 'react-native';
+import {
+    backgroundColor,
+    BackgroundColorProps,
+    border,
+    BorderProps,
+    createBox,
+    createRestyleComponent,
+    layout,
+    LayoutProps,
+    spacing,
+    SpacingProps
+} from '@shopify/restyle';
+
+import { Theme } from '@theme';
+import {
+    TouchableOpacityProps as RNTouchableOpacityProps,
+    TouchableOpacity
+} from 'react-native';
 
 export const Box = createBox<Theme>();
 

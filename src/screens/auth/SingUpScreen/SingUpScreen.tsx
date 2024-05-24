@@ -1,13 +1,16 @@
+import {
+    Button,
+    FormPasswordInput,
+    FormTextInput,
+    Screen,
+    Text
+} from "@components";
+
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useResetNavigationSucess } from "@hooks";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { RootStackParamList } from "@routes";
 import { useForm } from "react-hook-form";
-import { Button } from "../../../components/BUtton/Button";
-import { FormPasswordInput } from "../../../components/FormPasswordInput/FormPassWordInput";
-import { FormTextInput } from "../../../components/FormTextInput/FormTextInput";
-import { Screen } from "../../../components/Screen/Screen";
-import { Text } from "../../../components/Text/Text";
-import { useResetNavigationSucess } from "../../../hooks/useResetNavigationSucess";
-import { RootStackParamList } from "../../../routes/routes";
 import { singUpSchema } from "./singUpSchema";
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SingUpScreen'>
