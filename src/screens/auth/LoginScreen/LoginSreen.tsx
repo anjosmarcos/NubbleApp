@@ -1,8 +1,9 @@
-import { Alert } from 'react-native';
+import React from 'react';
+import {Alert} from 'react-native';
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { useForm } from 'react-hook-form';
+import {zodResolver} from '@hookform/resolvers/zod';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {useForm} from 'react-hook-form';
 
 import {
   Button,
@@ -10,16 +11,14 @@ import {
   FormTextInput,
   Screen,
   Text,
-} from "@components";
+} from '@components';
+import {RootStackParamList} from '@routes';
 
-// import { RootStackParamList } from "../../../routes/routes";
-import { RootStackParamList } from "@routes";
-
-import { loginSchema } from "./loginSchema";
+import {loginSchema} from './loginSchema';
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginSreen'>;
 
-export function LoginScreen({ navigation }: ScreenProps) {
+export function LoginScreen({navigation}: ScreenProps) {
   function navigateToSignUpScreen() {
     navigation.navigate('SingUpScreen');
   }
@@ -28,13 +27,13 @@ export function LoginScreen({ navigation }: ScreenProps) {
     navigation.navigate('ForgotPasswordScreen');
   }
 
-  function submitForm({ email, password }: loginSchema) {
+  function submitForm({email, password}: loginSchema) {
     // Chamar a API para fazer login
 
     Alert.alert(`Email: ${email} ${'\n'}Senha: ${password}`);
   }
 
-  const { control, formState, handleSubmit } = useForm<loginSchema>({
+  const {control, formState, handleSubmit} = useForm<loginSchema>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
       email: '',
@@ -57,7 +56,7 @@ export function LoginScreen({ navigation }: ScreenProps) {
         name="email"
         label="E-mail"
         placeholder="Digite seu e-mail"
-        boxProps={{ mb: 's20' }}
+        boxProps={{mb: 's20'}}
       />
 
       <FormPasswordInput
@@ -65,15 +64,14 @@ export function LoginScreen({ navigation }: ScreenProps) {
         name="password"
         label="Senha"
         placeholder="Digite sua senha"
-        boxProps={{ mb: 's10' }}
+        boxProps={{mb: 's10'}}
       />
 
       <Text
         onPress={navigateToForgotPasswordScreen}
         mt="s10"
         color="primary"
-        preset="paragraphSmall"
-      >
+        preset="paragraphSmall">
         Esqueci minha senha
       </Text>
 

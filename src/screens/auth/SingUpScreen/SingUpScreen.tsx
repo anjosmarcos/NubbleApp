@@ -1,6 +1,8 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { useForm } from 'react-hook-form';
+import React from 'react';
+
+import {zodResolver} from '@hookform/resolvers/zod';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {useForm} from 'react-hook-form';
 
 import {
   Button,
@@ -9,16 +11,16 @@ import {
   Screen,
   Text,
 } from '@components';
-import { useResetNavigationSucess } from "@hooks";
-import { RootStackParamList } from '@routes';
+import {useResetNavigationSucess} from '@hooks';
+import {RootStackParamList} from '@routes';
 
-import { singUpSchema } from "./singUpSchema";
+import {singUpSchema} from './singUpSchema';
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SingUpScreen'>;
 
-export function SingUpScreen({ navigation }: ScreenProps) {
-  const { reset } = useResetNavigationSucess();
-  const { control, formState, handleSubmit } = useForm<singUpSchema>({
+export function SingUpScreen({}: ScreenProps) {
+  const {reset} = useResetNavigationSucess();
+  const {control, formState, handleSubmit} = useForm<singUpSchema>({
     resolver: zodResolver(singUpSchema),
     defaultValues: {
       username: '',
@@ -37,7 +39,7 @@ export function SingUpScreen({ navigation }: ScreenProps) {
     reset({
       title: 'Sua conta foi criada com sucesso!',
       message: 'Agora é só fazer login na nossa plataforma',
-      icon: { name: 'CheckRound', color: 'success' },
+      icon: {name: 'CheckRound', color: 'success'},
     });
   }
   return (
@@ -51,7 +53,7 @@ export function SingUpScreen({ navigation }: ScreenProps) {
         name="username"
         label="Seu username"
         placeholder="@"
-        boxProps={{ mb: "s20" }}
+        boxProps={{mb: 's20'}}
       />
 
       <FormTextInput
@@ -60,7 +62,7 @@ export function SingUpScreen({ navigation }: ScreenProps) {
         // autoCapitalize="words"
         label="Seu nome completo"
         placeholder="Nome completo"
-        boxProps={{ mb: "s20" }}
+        boxProps={{mb: 's20'}}
       />
 
       <FormTextInput
@@ -68,7 +70,7 @@ export function SingUpScreen({ navigation }: ScreenProps) {
         name="email"
         label="E-mail"
         placeholder="Digite seu e-mail"
-        boxProps={{ mb: "s20" }}
+        boxProps={{mb: 's20'}}
       />
 
       <FormPasswordInput
@@ -76,7 +78,7 @@ export function SingUpScreen({ navigation }: ScreenProps) {
         name="password"
         label="Senha"
         placeholder="Digite sua senha"
-        boxProps={{ mb: "s48" }}
+        boxProps={{mb: 's48'}}
       />
 
       <Button

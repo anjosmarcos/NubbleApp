@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import { Circle, Path, Svg } from 'react-native-svg';
+import {Circle, Path, Svg} from 'react-native-svg';
 
-import { IconBase } from '../../components/Icon/Icon';
+import {IconBase} from '../../components/Icon/Icon';
 
-export function BellOnIcon({ color = 'black', size = 20 }: IconBase) {
+export function BellOnIcon({color = 'black', size = 20}: IconBase) {
   return (
     <Svg width={size} height={size} viewBox="0 0 20 20" fill="none">
       <Path

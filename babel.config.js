@@ -4,7 +4,7 @@ module.exports = {
     [
       'module-resolver',
       {
-        root: ".",
+        root: '.',
         alias: {
           '@components': './src/components',
           '@hooks': './src/hooks',

@@ -1,7 +1,7 @@
 import {
   TouchableOpacityProps as RNTouchableOpacityProps,
   TouchableOpacity,
-} from "react-native";
+} from 'react-native';
 
 import {
   backgroundColor,
@@ -14,9 +14,9 @@ import {
   LayoutProps,
   spacing,
   SpacingProps,
-} from "@shopify/restyle";
+} from '@shopify/restyle';
 
-import { Theme } from "@theme";
+import {Theme} from '@theme';
 
 export const Box = createBox<Theme>();
 

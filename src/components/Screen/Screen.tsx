@@ -1,16 +1,14 @@
-import { KeyboardAvoidingView, Platform } from 'react-native';
+import React = require('react');
+import {KeyboardAvoidingView, Platform} from 'react-native';
 
-import { useNavigation } from "@react-navigation/native";
+import {useNavigation} from '@react-navigation/native';
 
-import { Box, Text, TouchableOpacityBox } from "@components";
-import { useAppSafeArea, useAppTheme } from '@hooks';
+import {Box, Text, TouchableOpacityBox} from '@components';
+import {useAppSafeArea, useAppTheme} from '@hooks';
 
-import { Icon } from '../Icon/Icon';
+import {Icon} from '../Icon/Icon';
 
-import {
-  ScrollViewContainer,
-  ViewContainer,
-} from './components/ScreenContainer';
+import {ScrollViewContainer, ViewContainer} from './components/ScreenContainer';
 
 interface ScreenProps {
   children: React.ReactNode;
@@ -23,8 +21,8 @@ export function Screen({
   canGoBack = false,
   scrollable = false,
 }: ScreenProps) {
-  const { top, bottom } = useAppSafeArea();
-  const { colors } = useAppTheme();
+  const {top, bottom} = useAppSafeArea();
+  const {colors} = useAppTheme();
 
   const navigation = useNavigation();
 
@@ -32,21 +30,18 @@ export function Screen({
 
   return (
     <KeyboardAvoidingView
-      style={{ flex: 1 }}
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-    >
+      style={{flex: 1}}
+      behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       <Container backgroundColor={colors.background}>
         <Box
           paddingHorizontal="s24"
           paddingBottom="s24"
-          style={{ paddingTop: top, paddingBottom: bottom }}
-        >
+          style={{paddingTop: top, paddingBottom: bottom}}>
           {canGoBack && (
             <TouchableOpacityBox
               onPress={navigation.goBack}
               marginBottom="s24"
-              flexDirection="row"
-            >
+              flexDirection="row">
               <Icon name="arrowLeft" color="primary" />
               <Text preset="paragraphMedium" semiBold marginLeft="s8">
                 Voltar

@@ -1,14 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import {
-  Text,
-  TouchableOpacityBox,
-  TouchableOpacityBoxProps,
-} from "@components";
+import {Text, TouchableOpacityBox, TouchableOpacityBoxProps} from '@components';
 
-import { ActivityIndicator } from '../ActivityIndicator/ActivityIndicator';
+import {ActivityIndicator} from '../ActivityIndicator/ActivityIndicator';
 
-import { buttonPresets } from './buttonPresets';
+import {buttonPresets} from './buttonPresets';
 
 export type ButtonPreset = 'primary' | 'outline';
 
@@ -37,8 +33,7 @@ export function Button({
       justifyContent="center"
       borderRadius="s16"
       {...buttonPreset.container}
-      {...TouchableOpacityBoxProps}
-    >
+      {...TouchableOpacityBoxProps}>
       {loading ? (
         <ActivityIndicator color={buttonPreset.content} />
       ) : (

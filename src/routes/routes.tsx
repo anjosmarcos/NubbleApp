@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import { IconProps } from "@components";
+import {IconProps} from '@components';
 import {
   ForgotPasswordScreen,
   LoginScreen,
   SingUpScreen,
   SuccessScreen,
-} from "@screens";
+} from '@screens';
 
 export type RootStackParamList = {
   LoginSreen: undefined;
@@ -33,8 +33,7 @@ export function Router() {
           headerShown: false,
           fullScreenGestureEnabled: true,
         }}
-        initialRouteName="LoginSreen"
-      >
+        initialRouteName="LoginSreen">
         <Stack.Screen name="LoginSreen" component={LoginScreen} />
         <Stack.Screen name="SingUpScreen" component={SingUpScreen} />
         <Stack.Screen name="SuccessScreen" component={SuccessScreen} />

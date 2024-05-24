@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import { Path, Svg } from "react-native-svg";
+import {Path, Svg} from 'react-native-svg';
 
-export function CommentIcon({ color = 'black', size = 20 }) {
+export function CommentIcon({color = 'black', size = 20}) {
   return (
     <Svg width={size} height={size} viewBox="0 0 20 20" fill="none">
       <Path
