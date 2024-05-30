@@ -1,9 +1,8 @@
-import { useTheme } from "@shopify/restyle";
-import { Theme } from "../theme/theme";
-import React from "react";
+import {useTheme} from '@shopify/restyle';
 
+import {Theme} from '@theme';
 
 export function useAppTheme() {
-    const theme = useTheme<Theme>();
-    return theme;
+  const theme = useTheme<Theme>();
+  return theme;
 }

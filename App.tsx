@@ -1,9 +1,10 @@
-import { ThemeProvider } from '@shopify/restyle';
 import React from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { Router } from './src/routes/routes';
-import { theme } from './src/theme/theme';
 
+import {ThemeProvider} from '@shopify/restyle';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+
+import {Router} from '@routes';
+import {theme} from '@theme';
 
 function App(): JSX.Element {
   return (
@@ -12,7 +13,7 @@ function App(): JSX.Element {
         <Router />
       </ThemeProvider>
     </SafeAreaProvider>
-  )
+  );
 }
 
 export default App;
