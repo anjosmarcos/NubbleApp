@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {zodResolver} from '@hookform/resolvers/zod';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {useForm} from 'react-hook-form';
 
 import {
@@ -12,13 +11,11 @@ import {
   Text,
 } from '@components';
 import {useResetNavigationSucess} from '@hooks';
-import {RootStackParamList} from '@routes';
+import {AuthScreenProps} from '@routes';
 
 import {singUpSchema} from './singUpSchema';
 
-type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SingUpScreen'>;
-
-export function SingUpScreen({}: ScreenProps) {
+export function SingUpScreen({}: AuthScreenProps<'SingUpScreen'>) {
   const {reset} = useResetNavigationSucess();
   const {control, formState, handleSubmit} = useForm<singUpSchema>({
     resolver: zodResolver(singUpSchema),

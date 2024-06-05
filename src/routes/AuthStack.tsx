@@ -2,6 +2,7 @@ import React from 'react';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
+import {IconProps} from '@components';
 import {
   ForgotPasswordScreen,
   LoginScreen,
@@ -9,9 +10,18 @@ import {
   SuccessScreen,
 } from '@screens';
 
-import {RootStackParamList} from './routes';
+export type AuthStackParamList = {
+  LoginSreen: undefined;
+  SingUpScreen: undefined;
+  SuccessScreen: {
+    title: string;
+    message: string;
+    icon: Pick<IconProps, 'name' | 'color'>;
+  };
+  ForgotPasswordScreen: undefined;
+};
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator<AuthStackParamList>();
 
 export function AuthStack() {
   return (

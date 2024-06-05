@@ -1,21 +1,18 @@
 import React from 'react';
 
 import {zodResolver} from '@hookform/resolvers/zod';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {useForm} from 'react-hook-form';
 
 import {Button, FormTextInput, Screen, Text} from '@components';
 import {useResetNavigationSucess} from '@hooks';
-import {RootStackParamList} from '@routes';
+import {AuthScreenProps} from '@routes';
 
 import {forgotPasswordSchema} from './forgotPasswordSchema';
 
-type ScreenProps = NativeStackScreenProps<
-  RootStackParamList,
-  'ForgotPasswordScreen'
->;
-
-export function ForgotPasswordScreen({navigation}: ScreenProps) {
+export function ForgotPasswordScreen({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  navigation,
+}: AuthScreenProps<'ForgotPasswordScreen'>) {
   const {reset} = useResetNavigationSucess();
 
   const {control, formState, handleSubmit} = useForm<forgotPasswordSchema>({
@@ -26,28 +23,15 @@ export function ForgotPasswordScreen({navigation}: ScreenProps) {
     mode: 'onChange',
   });
 
-  function submitForm(formValues: forgotPasswordSchema) {
-    // TODO:
-
-    console.log(formValues);
+  function submitForm(values: forgotPasswordSchema) {
+    console.log(values);
 
     reset({
-      title: 'Enviamos as instruções para seu e-mail',
-      message: 'Clique no link enviado no seu e-mail para recuperar sua senha',
-      icon: {
-        name: 'messageRound',
-        color: 'primary',
-      },
-    });
-
-    navigation.navigate('SuccessScreen', {
-      title: 'Enviamos as instruções para seu e-mail',
-      message: 'Clique no link enviado no seu e-mail para recuperar sua senha',
-      icon: {
-        name: 'messageRound',
-        color: 'primary',
-      },
-    });
+      title: 'E-mail enviado',
+      message:
+        'Enviamos as instruções para redefinição de senha para o seu e-mail',
+      icon: {name: 'messageRound', color: 'primary'},
+    }); // Remove the argument from the reset function call
   }
   return (
     <Screen canGoBack>
